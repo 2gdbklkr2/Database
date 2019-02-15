@@ -7,10 +7,10 @@ File description: 	Create and maintain records to manage movies faster
 */
 
 //create database
-use store;
+use store
 
 //create collection
-db.createCollection("movie");
+db.createCollection("movie")
 
 //add movies to database
 db.movie.insertMany([
@@ -19,23 +19,23 @@ db.movie.insertMany([
    { title: "A Star is Born", genre:"Drama/Romanc",year_released:"2018", language:"English", movie_length:"134m" },
    { title: "Bird Box", genre:" Drama/Thriller",year_released:"2018",language:"English", movie_length:"124m"  },
    { title: "Bohemian Rhapsody", genre:"Drama/Biography",year_released:"2018",language:"English", movie_length:"133m" }
-]);
+])
 
 //find movies by genre
-db.movie.find({genre: "Thriller"});
+db.movie.find({genre: "Thriller"})
 
 //select all rows
-db.movie.find().pretty();
+db.movie.find().pretty()
 
 //find specific movie
-db.movie.findOne({title: "Glass"});
+db.movie.findOne({title: "Glass"})
 
 //delete specific movie
-db.movie.deleteOne({title: "Bird Box"});
+db.movie.deleteOne({title: "Bird Box"})
 
 //Update movie title
-db.movie.update({"title":"Glass"},{$set:{"title":"Woods"}});
+db.movie.update({"title":"Glass"},{$set:{"title":"Woods"}})
 
 //delete collection
-db.movie.drop();
+db.movie.drop()
 
